@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>cyph - venue partnerships</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nixie+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="game-shell">
+      <div class="bg-layer shell" id="bg-shell" style="opacity: 1"></div>
+      <div
+        class="bg-layer nextsteps"
+        id="bg-nextsteps"
+        style="opacity: 0"
+      ></div>
+      <div class="city-sil" id="citySil"></div>
+
+      <div class="hud">
+        <div class="hud-logo">cyph.</div>
+        <nav class="hud-nav">
+          <button class="hud-nav-btn active" onclick="goTo(0)">cyph</button>
+          <span class="hud-nav-sep">/</span>
+          <button class="hud-nav-btn" onclick="goTo(1)">founders</button>
+          <span class="hud-nav-sep">/</span>
+          <button class="hud-nav-btn" onclick="goTo(2)">irl</button>
+          <span class="hud-nav-sep">/</span>
+          <button class="hud-nav-btn" onclick="goTo(4)">partnership</button>
+          <span class="hud-nav-sep">/</span>
+          <button class="hud-nav-btn" onclick="goTo(6)">close</button>
+        </nav>
+        <div class="hud-counter" id="hudCtr">01/07</div>
+      </div>
+      <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+
+      <!-- LEVEL 0: TITLE -->
+      <div class="slide active" id="s0" style="align-items: flex-start">
+        <h1 style="font-size: 128px; color: #13293d; margin-left: -5px">
+          cyph<span>.</span>
+        </h1>
+        <p class="sub">the new underground to wrestle with ideas.</p>
+      </div>
+
+      <!-- LEVEL 1: FOUNDERS -->
+      <div class="slide" id="s1">
+        <h2>founders</h2>
+        <div class="badge-cards">
+          <!-- JALEN -->
+          <div class="badge-card" id="charA">
+            <div class="badge-header">
+              <a
+                class="badge-linkedin"
+                href="https://www.linkedin.com/in/jalen-d-333220156/"
+                target="_blank"
+                rel="noopener"
+                ><img src="assets/icons/linkedin.webp" alt="LinkedIn"
+              /></a>
+              <div class="badge-title">jalen daniels</div>
+              <div class="badge-subtitle">
+                <span class="badge-pill">philosopher</span>
+                <span class="badge-pill">technologist</span>
+                <span class="badge-pill">strategist</span>
+              </div>
+            </div>
+            <div class="badge-body">
+              <div class="badge-photo">
+                <img
+                  src="assets/people/jalen_headshot.png"
+                  alt="jalen daniels"
+                />
+              </div>
+              <div class="badge-fields">
+                <div class="badge-field">
+                  <span class="badge-label">role</span>
+                  <span class="badge-value">strategy lead</span>
+                </div>
+                <div class="badge-field">
+                  <span class="badge-label">alma mater</span>
+                  <span class="badge-value">harvard</span>
+                </div>
+                <div class="badge-field">
+                  <span class="badge-label">previous work</span>
+                  <span class="badge-value">ex-mckinsey</span>
+                </div>
+              </div>
+              <div class="badge-stats">
+                <div class="badge-stat">
+                  <span class="badge-stat-label">critical thinking</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: var(--blue)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">strategy</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: #6d1a36"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">vision</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: var(--yellow)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">handyman</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="9"
+                      style="width: 0%; background: #ec4e20"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">classical ballet</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: #13293d"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="badge-front-bottom">
+              <div class="badge-field">
+                <span class="badge-label">researching</span>
+                <span class="badge-value"
+                  >transhumanism &middot; nietzsche &middot; agriculture</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- BRYAN -->
+          <div class="badge-card" id="charB">
+            <div class="badge-header">
+              <a
+                class="badge-linkedin"
+                href="https://www.linkedin.com/in/bcashofficial/"
+                target="_blank"
+                rel="noopener"
+                ><img src="assets/icons/linkedin.webp" alt="LinkedIn"
+              /></a>
+              <div class="badge-title">bryan cash</div>
+              <div class="badge-subtitle">
+                <span class="badge-pill">computer scientist</span>
+                <span class="badge-pill">sports savant</span>
+                <span class="badge-x">x</span> optimizer
+              </div>
+            </div>
+            <div class="badge-body">
+              <div class="badge-photo">
+                <img
+                  src="assets/people/bryan_headshot.png"
+                  alt="bryan cash"
+                  style="object-position: center 30%"
+                />
+              </div>
+              <div class="badge-fields">
+                <div class="badge-field">
+                  <span class="badge-label">role</span>
+                  <span class="badge-value">technology lead</span>
+                </div>
+                <div class="badge-field">
+                  <span class="badge-label">alma mater</span>
+                  <span class="badge-value">syracuse</span>
+                </div>
+                <div class="badge-field">
+                  <span class="badge-label">previous work</span>
+                  <span class="badge-value">ex-wapo</span>
+                </div>
+              </div>
+              <div class="badge-stats">
+                <div class="badge-stat">
+                  <span class="badge-stat-label">systems design</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: var(--blue)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">enterprise apps</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: #6d1a36"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">big data</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: var(--yellow)"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">bowling</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="9"
+                      style="width: 0%; background: #ec4e20"
+                    ></div>
+                  </div>
+                </div>
+                <div class="badge-stat">
+                  <span class="badge-stat-label">any card game</span>
+                  <div class="badge-stat-track">
+                    <div
+                      class="badge-stat-fill"
+                      data-fill="99"
+                      style="width: 0%; background: #13293d"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="badge-front-bottom">
+              <div class="badge-field">
+                <span class="badge-label">researching</span>
+                <span class="badge-value"
+                  >technofeudalism &middot; neuroathletics &middot; greek
+                  philosophy</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 10: IRL -->
+      <div
+        class="slide"
+        id="s2"
+        style="
+          background:
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url(&quot;assets/backgrounds/central.png&quot;) center/cover
+              no-repeat;
+        "
+      >
+        <h2 style="color: #fff">why we want to work with you.</h2>
+
+        <div style="width: 1140px; margin-top: 18px">
+          <!-- top headline -->
+          <p
+            style="
+              font-family:
+                &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+              font-weight: 700;
+              font-size: 32px;
+              color: #608fe6;
+              line-height: 1.15;
+              margin: 0 0 10px 0;
+              white-space: nowrap;
+              text-shadow: 0 2px 24px rgba(96, 143, 230, 0.4);
+            "
+          >
+            our app closes every day. we navigate people to you.
+          </p>
+          <p
+            style="
+              font-family:
+                &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+              font-size: 16px;
+              color: rgba(255, 255, 255, 0.75);
+              line-height: 1.55;
+              margin: 0 0 28px 0;
+              max-width: 1140px;
+            "
+          >
+            we&rsquo;re building a community where people wrestle with the most pressing ideas and cultural moments. our digital cyph has open and close hours &mdash; on purpose. when it closes, our people need somewhere to go.
+          </p>
+
+        </div>
+      </div>
+
+      <!-- LEVEL 3: PARTNER ROOMS (isometric) -->
+      <div class="slide" id="s3">
+        <h2>who we are partnering with.</h2>
+
+        <div
+          style="
+            width: 1140px;
+            margin-top: 14px;
+            display: flex;
+            gap: 56px;
+            align-items: flex-start;
+          "
+        >
+          <!-- LEFT: isometric room stack -->
+          <div
+            style="
+              flex: 0 0 520px;
+              height: 460px;
+              position: relative;
+              perspective: 1600px;
+            "
+          >
+            <div
+              class="venue-iso-scene"
+              style="
+                position: absolute;
+                inset: 0;
+                transform-style: preserve-3d;
+                transform: rotateX(58deg) rotateZ(-42deg)
+                  translateZ(0);
+              "
+            >
+              <!-- platform 01 cafes (bottom layer) -->
+              <div
+                style="
+                  position: absolute;
+                  left: 60px;
+                  top: 60px;
+                  width: 260px;
+                  height: 180px;
+                  background: linear-gradient(
+                    135deg,
+                    #608fe6 0%,
+                    #4572c4 100%
+                  );
+                  border-radius: 6px;
+                  box-shadow:
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                    0 14px 40px rgba(0, 0, 0, 0.35);
+                  transform: translateZ(10px);
+                "
+              ></div>
+              <!-- platform 02 cocktails -->
+              <div
+                style="
+                  position: absolute;
+                  left: 200px;
+                  top: 60px;
+                  width: 260px;
+                  height: 180px;
+                  background: linear-gradient(
+                    135deg,
+                    #ec4e20 0%,
+                    #b93913 100%
+                  );
+                  border-radius: 6px;
+                  box-shadow:
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                    0 14px 40px rgba(0, 0, 0, 0.35);
+                  transform: translateZ(70px);
+                "
+              ></div>
+              <!-- platform 03 bookstores -->
+              <div
+                style="
+                  position: absolute;
+                  left: 60px;
+                  top: 200px;
+                  width: 260px;
+                  height: 180px;
+                  background: linear-gradient(
+                    135deg,
+                    #fbaf00 0%,
+                    #c78900 100%
+                  );
+                  border-radius: 6px;
+                  box-shadow:
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                    0 14px 40px rgba(0, 0, 0, 0.35);
+                  transform: translateZ(140px);
+                "
+              ></div>
+              <!-- platform 04 cultural -->
+              <div
+                style="
+                  position: absolute;
+                  left: 200px;
+                  top: 200px;
+                  width: 260px;
+                  height: 180px;
+                  background: linear-gradient(
+                    135deg,
+                    #6d1a36 0%,
+                    #42101f 100%
+                  );
+                  border-radius: 6px;
+                  box-shadow:
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                    0 14px 40px rgba(0, 0, 0, 0.35);
+                  transform: translateZ(210px);
+                "
+              ></div>
+            </div>
+          </div>
+
+          <!-- RIGHT: 100+ headline + four type names -->
+          <div style="flex: 1; padding-top: 8px">
+            <div
+              style="
+                font-family:
+                  &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                font-weight: 700;
+                font-size: 140px;
+                color: var(--charcoal);
+                line-height: 0.9;
+                letter-spacing: -0.04em;
+                margin: 0 0 6px 0;
+              "
+            >
+              100+
+            </div>
+            <div
+              style="
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                margin-top: 28px;
+              "
+            >
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 14px;
+                  padding-bottom: 12px;
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                "
+              >
+                <span
+                  style="
+                    flex: 0 0 36px;
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #608fe6;
+                    line-height: 1;
+                  "
+                  >01</span
+                >
+                <p
+                  style="
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: var(--charcoal);
+                    margin: 0;
+                  "
+                >
+                  cafes &amp; third places
+                </p>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 14px;
+                  padding-bottom: 12px;
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                "
+              >
+                <span
+                  style="
+                    flex: 0 0 36px;
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #ec4e20;
+                    line-height: 1;
+                  "
+                  >02</span
+                >
+                <p
+                  style="
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: var(--charcoal);
+                    margin: 0;
+                  "
+                >
+                  cocktail bars &amp; lounges
+                </p>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 14px;
+                  padding-bottom: 12px;
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                "
+              >
+                <span
+                  style="
+                    flex: 0 0 36px;
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #fbaf00;
+                    line-height: 1;
+                  "
+                  >03</span
+                >
+                <p
+                  style="
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: var(--charcoal);
+                    margin: 0;
+                  "
+                >
+                  indie bookstores
+                </p>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 14px;
+                "
+              >
+                <span
+                  style="
+                    flex: 0 0 36px;
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #6d1a36;
+                    line-height: 1;
+                  "
+                  >04</span
+                >
+                <p
+                  style="
+                    font-family:
+                      &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: var(--charcoal);
+                    margin: 0;
+                  "
+                >
+                  cultural institutions
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 11: HOW WE MAKE MONEY -->
+      <div class="slide" id="s4">
+        <h2>what we bring to your space.</h2>
+
+        <div style="width: 1100px; margin-top: 16px">
+          <!-- intro line -->
+          <div style="display: flex; gap: 0; align-items: start">
+            <div>
+              <p
+                style="
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-weight: 700;
+                  font-size: 28px;
+                  color: var(--charcoal);
+                  line-height: 1.2;
+                  margin-bottom: 12px;
+                "
+              >
+                four primary IRL formats
+              </p>
+            </div>
+          </div>
+
+          <!-- bottom rule -->
+          <div
+            style="border-top: 1px solid rgba(0, 0, 0, 0.1); margin-top: 20px"
+          ></div>
+
+          <!-- 2x2 grid of event types -->
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 0;
+              margin-top: 24px;
+            "
+          >
+            <!-- research hackathons -->
+            <div
+              style="
+                padding: 4px 28px 24px 0;
+                border-right: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+              "
+            >
+              <div
+                style="
+                  display: inline-block;
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 11px;
+                  color: #fff;
+                  padding: 4px 10px;
+                  border-radius: 20px;
+                  background: #ec4e20;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                01 &middot; research hackathons
+              </div>
+              <p
+                style="
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 13px;
+                  color: var(--charcoal-muted);
+                  line-height: 1.55;
+                  margin: 0;
+                "
+              >
+                our platform is ed-tech made social &mdash; where the
+                greatest thinkers wrestle with ideas before they wrestle with
+                people. the experience on the platform is what we bring into
+                your space.
+              </p>
+            </div>
+
+            <!-- watch parties -->
+            <div
+              style="
+                padding: 4px 0 24px 28px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+              "
+            >
+              <div
+                style="
+                  display: inline-block;
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 11px;
+                  color: #fff;
+                  padding: 4px 10px;
+                  border-radius: 20px;
+                  background: #608fe6;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                02 &middot; curated watch parties
+              </div>
+              <p
+                style="
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 13px;
+                  color: var(--charcoal-muted);
+                  line-height: 1.55;
+                  margin: 0;
+                "
+              >
+                films, tentpole moments, highly-watched sporting events,
+                debates. what we host on our platform gets replicated in your
+                space &mdash; strangers seated by productive tension, then
+                strategically moved between groups throughout the night.
+              </p>
+            </div>
+
+            <!-- book discussions -->
+            <div
+              style="
+                padding: 24px 28px 4px 0;
+                border-right: 1px solid rgba(0, 0, 0, 0.1);
+              "
+            >
+              <div
+                style="
+                  display: inline-block;
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 11px;
+                  color: #fff;
+                  padding: 4px 10px;
+                  border-radius: 20px;
+                  background: #fbaf00;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                03 &middot; meaningful discussions
+              </div>
+              <p
+                style="
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 13px;
+                  color: var(--charcoal-muted);
+                  line-height: 1.55;
+                  margin: 0;
+                "
+              >
+                on our platform, every discussion surfaces underground
+                artifacts people would never have found otherwise. we&rsquo;d
+                love to surface
+                <strong style="color: var(--charcoal)">your artifacts</strong>
+                &mdash; books, records, prints, archives &mdash; into the
+                hands of the people in the room.
+              </p>
+            </div>
+
+            <!-- office hours -->
+            <div style="padding: 24px 0 4px 28px">
+              <div
+                style="
+                  display: inline-block;
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 11px;
+                  color: #fff;
+                  padding: 4px 10px;
+                  border-radius: 20px;
+                  background: #6d1a36;
+                  text-transform: uppercase;
+                  letter-spacing: 1px;
+                  margin-bottom: 10px;
+                "
+              >
+                04 &middot; office hours
+              </div>
+              <p
+                style="
+                  font-family:
+                    &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                  font-size: 13px;
+                  color: var(--charcoal-muted);
+                  line-height: 1.55;
+                  margin: 0;
+                "
+              >
+                we work with niche experts &mdash; animal vets to offensive
+                coordinators. different experts bring different audiences,
+                and we&rsquo;d love to bring that range into your space.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- remove old panel -->
+        <div style="display: none">
+          <div
+            class="game-panel"
+            style="width: 880px; max-width: 100%; margin-top: 8px"
+          >
+            <div class="game-panel-header green-header">business model</div>
+            <div class="game-panel-body" style="padding: 16px 20px">
+              <div class="biz-layout">
+                <div class="biz-main">
+                  <div style="text-align: center; margin-bottom: 10px">
+                    <span class="sicon lg"
+                      ><img
+                        src="data:image/png;base64,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"
+                        alt=""
+                    /></span>
+                  </div>
+                  <h3
+                    style="
+                      font-family:
+                        &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+                      font-weight: 700;
+                      font-size: 16px;
+                      text-align: center;
+                      color: #fff;
+                      margin-bottom: 4px;
+                    "
+                  >
+                    research
+                  </h3>
+                  <p
+                    style="
+                      font-size: 15px;
+                      color: rgba(255, 255, 255, 0.5);
+                      text-align: center;
+                      line-height: 1.5;
+                      margin-bottom: 10px;
+                    "
+                  >
+                    collaborators pay us to feature their treasures in the
+                    underground. the right content surfaces to the right people.
+                  </p>
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: #fff;
+                      text-align: center;
+                      font-weight: 600;
+                    "
+                  >
+                    all resource pools are human-produced. never ai.
+                  </p>
+                  <div class="biz-cats">
+                    <span class="biz-cat">film footage</span
+                    ><span class="biz-cat">fashion archives</span
+                    ><span class="biz-cat">universities</span
+                    ><span class="biz-cat">rare book stores</span
+                    ><span class="biz-cat">music estates</span
+                    ><span class="biz-cat">sports inventory</span
+                    ><span class="biz-cat">museums</span
+                    ><span class="biz-cat">art collections</span
+                    ><span class="biz-cat">vintage stores</span
+                    ><span class="biz-cat">serial collectors</span
+                    ><span class="biz-cat">publications</span>
+                  </div>
+                </div>
+                <div class="biz-side">
+                  <div class="biz-card">
+                    <h4>conversations free</h4>
+                    <p>
+                      no ads. institutions and authors pay for the research
+                      layer. that layer is its own product.
+                    </p>
+                  </div>
+                  <div class="biz-card">
+                    <h4>data layer</h4>
+                    <p>
+                      meta charges $8-$15 cpm for clicks. we offer how people
+                      think. that's the real currency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 12: SCALE TRAJECTORY -->
+      <div class="slide" id="s5">
+        <h2>we&rsquo;re venture backed.</h2>
+        <div style="width: 1100px; margin-top: 18px">
+          <p
+            style="
+              font-family:
+                &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+              font-weight: 700;
+              font-size: 26px;
+              color: var(--charcoal);
+              line-height: 1.25;
+              margin: 0 0 36px 0;
+              max-width: 860px;
+            "
+          >
+            we&rsquo;d love to work with you now &mdash; and when we blow up.
+          </p>
+
+          <!-- trajectory chart -->
+          <div>
+            <svg
+              viewBox="0 0 1100 320"
+              style="width: 100%; height: auto; overflow: visible"
+            >
+              <defs>
+                <linearGradient
+                  id="traj-area"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop
+                    offset="0%"
+                    stop-color="#ec4e20"
+                    stop-opacity="0.28"
+                  />
+                  <stop
+                    offset="100%"
+                    stop-color="#ec4e20"
+                    stop-opacity="0"
+                  />
+                </linearGradient>
+                <linearGradient
+                  id="traj-stroke"
+                  x1="0"
+                  y1="0"
+                  x2="1"
+                  y2="0"
+                >
+                  <stop offset="0%" stop-color="#fbaf00" />
+                  <stop offset="50%" stop-color="#ec4e20" />
+                  <stop offset="100%" stop-color="#6d1a36" />
+                </linearGradient>
+              </defs>
+
+              <!-- horizontal guides -->
+              <line
+                x1="60"
+                y1="40"
+                x2="1060"
+                y2="40"
+                stroke="rgba(0,0,0,0.06)"
+                stroke-width="1"
+              />
+              <line
+                x1="60"
+                y1="100"
+                x2="1060"
+                y2="100"
+                stroke="rgba(0,0,0,0.06)"
+                stroke-width="1"
+              />
+              <line
+                x1="60"
+                y1="160"
+                x2="1060"
+                y2="160"
+                stroke="rgba(0,0,0,0.06)"
+                stroke-width="1"
+              />
+              <line
+                x1="60"
+                y1="220"
+                x2="1060"
+                y2="220"
+                stroke="rgba(0,0,0,0.06)"
+                stroke-width="1"
+              />
+              <line
+                x1="60"
+                y1="260"
+                x2="1060"
+                y2="260"
+                stroke="rgba(0,0,0,0.12)"
+                stroke-width="1"
+              />
+
+              <!-- area under curve -->
+              <path
+                d="M 80 260 L 325 220 L 570 160 L 815 100 L 1060 40 L 1060 260 L 80 260 Z"
+                fill="url(#traj-area)"
+              />
+
+              <!-- trajectory line -->
+              <path
+                d="M 80 260 L 325 220 L 570 160 L 815 100 L 1060 40"
+                fill="none"
+                stroke="url(#traj-stroke)"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+              <!-- 1K · today -->
+              <circle
+                cx="80"
+                cy="260"
+                r="8"
+                fill="#fbaf00"
+                stroke="#ede8de"
+                stroke-width="3"
+              />
+              <text
+                x="80"
+                y="238"
+                text-anchor="middle"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-weight="700"
+                font-size="24"
+                fill="#13293d"
+              >
+                1K
+              </text>
+              <text
+                x="80"
+                y="288"
+                text-anchor="middle"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-size="12"
+                fill="#13293d"
+                opacity="0.6"
+              >
+                today
+              </text>
+
+              <!-- 10K -->
+              <circle
+                cx="325"
+                cy="220"
+                r="8"
+                fill="#fbaf00"
+                stroke="#ede8de"
+                stroke-width="3"
+              />
+              <text
+                x="325"
+                y="198"
+                text-anchor="middle"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-weight="700"
+                font-size="24"
+                fill="#13293d"
+              >
+                10K
+              </text>
+
+              <!-- 100K -->
+              <circle
+                cx="570"
+                cy="160"
+                r="8"
+                fill="#ec4e20"
+                stroke="#ede8de"
+                stroke-width="3"
+              />
+              <text
+                x="570"
+                y="138"
+                text-anchor="middle"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-weight="700"
+                font-size="24"
+                fill="#13293d"
+              >
+                100K
+              </text>
+
+              <!-- 1M -->
+              <circle
+                cx="815"
+                cy="100"
+                r="8"
+                fill="#6d1a36"
+                stroke="#ede8de"
+                stroke-width="3"
+              />
+              <text
+                x="815"
+                y="78"
+                text-anchor="middle"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-weight="700"
+                font-size="24"
+                fill="#13293d"
+              >
+                1M
+              </text>
+
+              <!-- 3M -->
+              <circle
+                cx="1060"
+                cy="40"
+                r="10"
+                fill="#6d1a36"
+                stroke="#ede8de"
+                stroke-width="3"
+              />
+              <text
+                x="1060"
+                y="18"
+                text-anchor="end"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-weight="700"
+                font-size="30"
+                fill="#6d1a36"
+              >
+                3M
+              </text>
+              <text
+                x="1060"
+                y="288"
+                text-anchor="end"
+                font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+                font-size="12"
+                fill="#13293d"
+                opacity="0.6"
+              >
+                community within the next 1-3 years
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- LEVEL 15: CLOSE -->
+      <div class="slide" id="s6">
+        <h1 style="font-size: 48px; color: #13293d">join the residency.</h1>
+        <p class="sub" style="margin-top: 4px">
+          cash@smack.live &middot; jalen@smack.live
+        </p>
+        <p
+          class="sub"
+          style="margin-top: 8px; font-size: 12px; color: #13293d; opacity: 0.5"
+        >
+          (forgive the rebrand. we recently changed from smack to cyph)
+        </p>
+      </div>
+
+      <div class="xp-burst" id="xpBurst">+1000 XP</div>
+
+      <div class="bottom-hud">
+        <div class="hud-bars">
+          <div class="hud-bar">
+            <div class="hud-bar-label">research</div>
+            <div class="hud-bar-track">
+              <div class="hud-bar-fill" id="bar0" style="width: 10%"></div>
+            </div>
+          </div>
+          <div class="hud-bar">
+            <div class="hud-bar-label">community</div>
+            <div class="hud-bar-track">
+              <div class="hud-bar-fill" id="bar1" style="width: 10%"></div>
+            </div>
+          </div>
+          <div class="hud-bar">
+            <div class="hud-bar-label">revenue</div>
+            <div class="hud-bar-track">
+              <div class="hud-bar-fill" id="bar2" style="width: 5%"></div>
+            </div>
+          </div>
+          <div class="hud-bar">
+            <div class="hud-bar-label">impact</div>
+            <div class="hud-bar-track">
+              <div class="hud-bar-fill" id="bar3" style="width: 5%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-gel">
+          <button id="navPrev">&#8592;</button
+          ><button id="navNext">&#8594;</button>
+        </div>
+        <div class="bhud-counter" id="bhudCtr">01/07</div>
+      </div>
+    </div>
+    <!-- end game-shell -->
+
+    <div id="deck-controls">
+      <button id="lock-btn" onclick="toggleLock()">&#x1f512;</button>
+    </div>
+
+    <div id="auth-gate" aria-label="access gate">
+      <div class="auth-panel">
+        <!-- reuses the same station-sign element shown on s4 — same dark
+             placard, same C/Y/P/H route bullets — so the gate reads as
+             slide zero of the deck rather than a separate auth screen -->
+        <div class="station-sign auth-sign">
+          <div class="station-name">we're the new underground.</div>
+          <div class="station-bullets">
+            <span class="station-bullet paprika">C</span
+            ><span class="station-bullet cornflower">Y</span
+            ><span class="station-bullet amber">P</span
+            ><span class="station-bullet amaranth">H</span>
+          </div>
+        </div>
+        <form id="auth-form" autocomplete="off">
+          <input
+            id="auth-input"
+            type="email"
+            inputmode="email"
+            autocomplete="off"
+            autocapitalize="off"
+            autocorrect="off"
+            spellcheck="false"
+            placeholder="enter your email..."
+          />
+          <button type="submit">enter</button>
+        </form>
+        <div id="auth-err">&nbsp;</div>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="deck.js"></script>
+  </body>
+</html>
